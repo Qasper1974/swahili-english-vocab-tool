@@ -18,10 +18,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.http import HttpResponse
 
-def Home(request):
-    return HttpResponse('hoera')
+from . import views
+
+# def Home(request):
+#     return HttpResponse('hoera')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', Home),
+    path('', views.home),
 ]
