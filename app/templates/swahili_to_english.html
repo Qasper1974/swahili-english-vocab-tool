@@ -1,38 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
-    <title>Document</title>
-    <style>
-        body {
-            background-color: rgb(180, 180, 230);
-        }
-    </style>
-</head>
-<body>
     {% extends 'home.html' %}
     {% block content %}
-    
+<br>
    <h1>SWAHILI to ENGLISH</h1> 
 
   {% for voc in voc %}
-<ul class="list-group ">
-    <li class="list-group-item d-flex justify-content-between align-items-start">
-      <div class="ms-2 me-auto">
+<ul class="list-group mx-auto" style="width: 450px;">
+    <li class="list-group-item d-flex justify-content-center">
+      <div class="ms-2">
         <div class="fw-bold">{{ voc.swahili_word }}</div>
-        {{ voc.english_translation }}
+        <span>{{ voc.english_translation }}</span>
       </div>
-      <span class="badge bg-primary rounded-pill">{{ voc.lesson }}</span>
+      <span class="badge bg-primary rounded-pill">Lesson {{ voc.lesson }}</span>
     </li>
 </ul>
 {% endfor %}
-
-
-   {% endblock content %}
-
-</body>
-</html>
+{% endblock content %}
