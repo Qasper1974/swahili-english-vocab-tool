@@ -6,3 +6,6 @@ from django.http import HttpResponse
 
 def home(request):
     return render(request, 'home.html')
+    
+def ste(request):
+    return render(request, 'home-copy.html')
