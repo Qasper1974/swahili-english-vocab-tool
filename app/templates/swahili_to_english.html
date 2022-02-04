@@ -1,17 +1,17 @@
     {% extends 'home.html' %}
     {% block content %}
 <br>
-   <h1>SWAHILI to ENGLISH</h1> 
+   <h2>SWAHILI - ENGLISH</h2> 
 
   {% for voc in voc %}
-<ul class="list-group mx-auto" style="width: 450px;">
-    <li class="list-group-item d-flex justify-content-center">
-      <div class="ms-2">
-        <div class="fw-bold">{{ voc.swahili_word }}</div>
-        <span>{{ voc.english_translation }}</span>
-      </div>
-      <span class="badge bg-primary rounded-pill">Lesson {{ voc.lesson }}</span>
-    </li>
-</ul>
+
+<div class="container" style="width: 600px;">
+    <div class="row">
+        <div class="fw-bold col" style="font-size: 20px; height: 40px;">{{ voc.swahili_word }} </div>
+        <div class="col"  style="font-size: 20px; font-style: italic; height: 40px;"> {{ voc.english_translation }} </div>
+        <div class="col-1" style="font-size: 16px;"><span style="color: rgb(255, 255, 255); background-color: rgb(33, 33, 34); padding: 1px;">L{{ voc.lesson }} </span></div>
+  </div>
+
+
 {% endfor %}
 {% endblock content %}

@@ -1,7 +1,13 @@
 {% extends 'home.html' %}
 {% block content %}
 <br>
-<h1>ADMIN</h1> 
+<h2>ADMIN</h2> 
 
-{% endfor %}
+<div class="">
+    <form method="POST" action=""></form>
+    {% csrf_token%}
+    <!-- {{form.as_p}} -->
+    <input type="submit" value="SUBMIT">
+</div>
+
 {% endblock content %}
