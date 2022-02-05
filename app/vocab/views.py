@@ -21,5 +21,5 @@ def create_word(request):
     #     if form.is_valid():
     #         form.save()
     #         # return redirect('home.html')
-    # context = {'form': form}
-    return render(request, 'vocab_form.html')
+    context = {}
+    return render(request, 'vocab_form.html', context)
