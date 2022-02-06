@@ -2,7 +2,7 @@ from unicodedata import name
 from django.shortcuts import render
 
 from .models import Vocabulary
-# from sev import forms
+from .forms import VocabularyForm
 
 # Create your views here.
 
@@ -15,11 +15,11 @@ def ste(request):
     return render(request, 'swahili_to_english.html', context)
 
 def create_word(request):
-    # form = forms.VocabularyForm()
-    # if request.method == 'POST':
-    #     form = form.VocabularyForm(request.POST)
-    #     if form.is_valid():
-    #         form.save()
-    #         # return redirect('home.html')
+    form = VocabularyForm()
+    if request.method == 'POST':
+        form = form.VocabularyForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # return redirect('home.html')
     context = {}
     return render(request, 'vocab_form.html', context)
