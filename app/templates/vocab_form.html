@@ -1,14 +1,25 @@
 {% extends 'home.html' %}
 {% block content %}
 <br>
-<h2>ADMIN</h2> 
-
-<div class="">
-    <form method="POST" action="{% url 'create_word' %}">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="SUBMIT">
-     </form>
+<div class="container">
+    <div class="row">
+        <div class="col-5"></div>
+        <div class="col-7"><h2 >ADD WORDS</h2> </div>
+        
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-8">
+            <form method="POST" action="{% url 'create_word' %}">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="SUBMIT">
+                 </form> 
+        </div>
+    </div>
 </div>
 
 {% endblock content %}
