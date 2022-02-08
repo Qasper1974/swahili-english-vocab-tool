@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-5"></div>
-        <div class="col-7"><h2>SWAHILI - ENGLISH</h2> </div>
+        <div class="col-7"><h2>EDIT / DELETE WORDS</h2> </div>
     </div>
 </div> 
 
@@ -17,8 +17,8 @@
         <div class="col-1" style="font-size: 15px; margin-top: 5px; "><span style="color: rgb(196, 196, 196); ">L{{ voc.lesson }}</span></div>
     </div>
     <div style="margin-left: 20px;display: flex;">
-        <a style="font-size: 30px; border-radius: 8px; text-decoration: none; color: rgb(180, 180, 230); " href="">&#9998;</a>
-        <span style="margin-left: 20px;"><a style="font-size: 30px; border-radius: 8px; text-decoration: none; color: rgb(180, 180, 230)" href="">X</a></span>
+        <a style="margin: 1px; font-size: 30px; border-radius: 8px; text-decoration: none; color: rgb(66, 34, 139);" href="{% url 'update_word' voc.id %}">&#9998;</a>
+        <span style="margin-left: 20px;"><a style="font-size: 30px; border-radius: 8px; text-decoration: none; color: red;" href="{% url 'update_word' voc.id %}">X</a></span>
     </div>
   </div>
 

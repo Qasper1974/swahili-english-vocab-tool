@@ -19,6 +19,11 @@ def ets(request):
     context = {'voc' : voc}
     return render(request, 'english_to_swahili.html', context)
 
+def edit(request):
+    voc = Vocabulary.objects.order_by('swahili_word')
+    context = {'voc' : voc}
+    return render(request, 'edit.html', context)
+
 def create_word(request):
     form = VocabularyForm()
     if request.method == 'POST':
@@ -36,6 +41,6 @@ def update_word(request, pk):
         form = VocabularyForm(request.POST, instance=word)
         if form.is_valid():
             form.save()
-            return redirect('ste')
+            return redirect('edit')
     context = { 'form': form }
-    return render(request, 'vocab_form.html', context)
+    return render(request, 'edit_form.html', context)

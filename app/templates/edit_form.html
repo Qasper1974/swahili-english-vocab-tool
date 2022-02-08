@@ -1,0 +1,25 @@
+{% extends 'home.html' %}
+{% block content %}
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-5"></div>
+        <div class="col-7"><h2 >EDIT WORDS</h2> </div>
+        
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-8">
+            <form method="POST" action="">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input class="btn btn-primary" type="submit" value="UPDATE">
+                 </form> 
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
