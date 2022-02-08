@@ -35,7 +35,7 @@ def update_word(request, pk):
     if request.method == 'POST':
         form = VocabularyForm(request.POST, instance=word)
         if form.is_valid():
-            form.save(instance=word)
-            return redirect('home.html')
+            form.save()
+            return redirect('ste')
     context = { 'form': form }
     return render(request, 'vocab_form.html', context)
