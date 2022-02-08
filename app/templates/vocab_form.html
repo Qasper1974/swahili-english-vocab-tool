@@ -4,10 +4,11 @@
 <h2>ADMIN</h2> 
 
 <div class="">
-    <form method="POST" action=""></form>
-    {% csrf_token%}
-    <!-- {{form.as_p}} -->
+    <form method="POST" action="{% url 'create_word' %}">
+    {% csrf_token %}
+    {{form.as_p}}
     <input type="submit" value="SUBMIT">
+     </form>
 </div>
 
 {% endblock content %}

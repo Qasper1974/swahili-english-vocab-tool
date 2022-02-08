@@ -17,9 +17,9 @@ def ste(request):
 def create_word(request):
     form = VocabularyForm()
     if request.method == 'POST':
-        form = form.VocabularyForm(request.POST)
+        form = VocabularyForm(request.POST)
         if form.is_valid():
             form.save()
             # return redirect('home.html')
-    context = {}
+    context = { 'form' : form}
     return render(request, 'vocab_form.html', context)
