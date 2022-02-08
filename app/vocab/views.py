@@ -14,6 +14,11 @@ def ste(request):
     context = {'voc' : voc}
     return render(request, 'swahili_to_english.html', context)
 
+def ets(request):
+    voc = Vocabulary.objects.order_by('english_translation')
+    context = {'voc' : voc}
+    return render(request, 'english_to_swahili.html', context)
+
 def create_word(request):
     form = VocabularyForm()
     if request.method == 'POST':
