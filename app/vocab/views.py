@@ -42,5 +42,15 @@ def update_word(request, pk):
         if form.is_valid():
             form.save()
             return redirect('edit')
+        return redirect('edit')
     context = { 'form': form }
     return render(request, 'edit_form.html', context)
+
+def delete_word(request, pk):
+    word = Vocabulary.objects.get(id=pk)
+    form = VocabularyForm(instance=word)
+    if request.method == 'POST':
+        word.delete()
+        return redirect('edit')
+    context = { 'form': form, 'word' : word }
+    return render(request, 'delete_form.html', context)

@@ -3,7 +3,7 @@
 <br>
 <div class="container">
     <div class="row">
-        <div class="col-5"></div>
+        <div class="col-4"></div>
         <div class="col-7"><h2>EDIT / DELETE WORDS</h2> </div>
     </div>
 </div> 
@@ -18,7 +18,7 @@
     </div>
     <div style="margin-left: 20px;display: flex;">
         <a style="margin: 1px; font-size: 30px; border-radius: 8px; text-decoration: none; color: rgb(66, 34, 139);" href="{% url 'update_word' voc.id %}">&#9998;</a>
-        <span style="margin-left: 20px;"><a style="font-size: 30px; border-radius: 8px; text-decoration: none; color: red;" href="{% url 'update_word' voc.id %}">X</a></span>
+        <span style="margin-left: 20px;"><a style="font-size: 30px; border-radius: 8px; text-decoration: none; color: red;" href="{% url 'delete_word' voc.id %}">X</a></span>
     </div>
   </div>
 

@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-4"></div>
-        <div class="col-7"><h2 >EDIT WORDS</h2> </div>
+        <div class="col-8"><h2 style="color: red;" >DELETE '<span style="color: black; font-weight: bold; font-style: italic;">{{ word.swahili_word }}</span>'?</h2> </div>
         
     </div>
 </div>
@@ -16,8 +16,8 @@
             <form method="POST" action="">
                 {% csrf_token %}
                 {{form.as_p}}
-                <input class="btn btn-primary" type="submit" value="UPDATE">
-                <a class="btn btn-warning" href="{% url 'edit' %}">Don't update </a>
+                <input class="btn btn-danger" type="submit" value="DELETE">
+                <a class="btn btn-warning" href="{% url 'edit' %}">Don't delete </a>
                  </form> 
         </div>
     </div>
