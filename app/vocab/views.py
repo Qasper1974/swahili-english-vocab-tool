@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 
 from .models import Vocabulary
 from .forms import VocabularyForm
+from .filters import WordFilter
 
 # Create your views here.
 
@@ -11,7 +12,9 @@ def home(request):
 
 def ste(request):
     voc = Vocabulary.objects.order_by('swahili_word')
-    context = {'voc' : voc}
+    filter = WordFilter(request.GET, queryset=Vocabulary.objects.all())
+    voc = filter.qs
+    context = {'voc' : voc, 'filter': filter}
     return render(request, 'swahili_to_english.html', context)
 
 def ets(request):
