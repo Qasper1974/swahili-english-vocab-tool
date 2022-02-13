@@ -17,7 +17,7 @@
                 {% csrf_token %}
                 {{form.as_p}}
                 <input class="btn btn-danger" type="submit" value="DELETE">
-                <a class="btn btn-warning" href="{% url 'edit' %}">Don't delete </a>
+                <a class="btn btn-warning" style="margin-left: 30px;" href="{% url 'edit' %}">Don't delete </a>
                  </form> 
         </div>
     </div>
