@@ -5,7 +5,9 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('ste/sort', views.stesort, name="stesort"),
     path('ste/', views.ste, name="ste"),
+    path('ets/sort', views.etssort, name="etssort"),
     path('ets/', views.ets, name="ets"),
     path('edit/', views.edit, name="edit"),
     path('create_word/', views.create_word, name="create_word"),

@@ -14,16 +14,36 @@ def ste(request):
     voc = Vocabulary.objects.order_by('swahili_word')
     filter = WordFilter(request.GET, queryset=Vocabulary.objects.all())
     voc = filter.qs.order_by('swahili_word')
-    display = f'style="display: none;"'
-    context = {'voc' : voc, 'filter': filter, 'display' : display}
+    display = False
+    btntofilter = True
+    context = {'voc' : voc, 'filter': filter, 'display' : display, 'btntofilter' : btntofilter}
+    return render(request, 'swahili_to_english.html', context)
+
+def stesort(request):
+    voc = Vocabulary.objects.order_by('swahili_word')
+    filter = WordFilter(request.GET, queryset=Vocabulary.objects.all())
+    voc = filter.qs.order_by('swahili_word')
+    display = True
+    btntofilter = False
+    context = {'voc' : voc, 'filter': filter, 'display' : display, 'btntofilter' : btntofilter}
     return render(request, 'swahili_to_english.html', context)
 
 def ets(request):
     voc = Vocabulary.objects.order_by('english_translation')
     filter = WordFilter(request.GET, queryset=Vocabulary.objects.all())
     voc = filter.qs.order_by('english_translation')
-    display = f'style="display: none;"'
-    context = {'voc' : voc, 'filter': filter, 'display' : display}
+    display = False
+    btntofilter = True
+    context = {'voc' : voc, 'filter': filter, 'display' : display, 'btntofilter' : btntofilter}
+    return render(request, 'english_to_swahili.html', context)
+
+def etssort(request):
+    voc = Vocabulary.objects.order_by('english_translation')
+    filter = WordFilter(request.GET, queryset=Vocabulary.objects.all())
+    voc = filter.qs.order_by('english_translation')
+    display = True
+    btntofilter = False
+    context = {'voc' : voc, 'filter': filter, 'display' : display, 'btntofilter' : btntofilter}
     return render(request, 'english_to_swahili.html', context)
 
 def edit(request):

@@ -4,8 +4,11 @@
 <div class="container">
     <div class="row">
         <div class="col-4"></div>
-        <div class="col-7"><h2>SWAHILI - ENGLISH</h2> </div>
-    </div>
+        <div class="col-7"><h2>SWAHILI - ENGLISH 
+            {% if btntofilter %}
+            <a class="btn btn-sm btn-primary" style="margin-left: 30px; margin-top: -7px" href="{% url 'stesort' %}">sort?</a></h2> </div>
+            {% endif %}
+        </div>
 </div> 
 {% include 'filter.html' %}
 
