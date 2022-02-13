@@ -9,6 +9,7 @@ urlpatterns = [
     path('ste/', views.ste, name="ste"),
     path('ets/sort', views.etssort, name="etssort"),
     path('ets/', views.ets, name="ets"),
+    path('edit/sort', views.editsort, name="editsort"),
     path('edit/', views.edit, name="edit"),
     path('create_word/', views.create_word, name="create_word"),
     path('update_word/<str:pk>', views.update_word, name="update_word"),

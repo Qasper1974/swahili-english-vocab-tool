@@ -4,11 +4,17 @@
 
         <form >
             {% if display %}
-            {{filter.form.as_p}}
-            <input class="btn btn-primary" type="submit" value="Filter">
-            <a class="btn btn-warning" style="margin-left: 120px;" href="{% url 'ste' %}">Don't filter </a>
+                {{filter.form.as_p}}
+                <input class="btn btn-primary" type="submit" value="Filter">
+                {% if filterpage == 'ste' %}
+                    <a class="btn btn-warning" style="margin-left: 120px;" href="{% url 'ste' %}">Don't filter </a>
+                {% elif filterpage == 'ets' %}
+                    <a class="btn btn-warning" style="margin-left: 120px;" href="{% url 'ets' %}">Don't filter </a>
+                {% else %}
+                    <a class="btn btn-warning" style="margin-left: 120px;" href="{% url 'edit' %}">Don't filter </a>
+                {% endif %}
             {% endif %}
-            </h6> 
+                </h6> 
         </form>
     </div>
 </div>

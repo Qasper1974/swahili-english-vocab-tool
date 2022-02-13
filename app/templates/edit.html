@@ -5,6 +5,10 @@
     <div class="row">
         <div class="col-4"></div>
         <div class="col-7"><h2>EDIT / DELETE WORDS
+            {% if btntofilter %}
+            <a class="btn btn-sm btn-primary" style="margin-left: 30px; margin-top: -7px" href="{% url 'editsort' %}">sort?</a></h2> </div>
+            {% endif %}
+
             </h2></div>
     </div>
 </div> 
