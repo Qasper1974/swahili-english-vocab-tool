@@ -6,17 +6,8 @@
         <div class="col-4"></div>
         <div class="col-7"><h2>SWAHILI - ENGLISH</h2> </div>
     </div>
-    <div class="row">
-        <div class="col-4"></div>
-        <div class="col-7"><h4>
-            <form action="">
-                {{ filter.form }}
-                </h4> 
-                <input class="btn btn-info" type="submit" value="zoek op">
-            </form>
-        </div>
-    </div>
 </div> 
+{% include 'filter.html' %}
 
   {% for voc in voc %}
 

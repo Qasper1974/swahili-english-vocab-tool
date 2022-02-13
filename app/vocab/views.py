@@ -13,18 +13,25 @@ def home(request):
 def ste(request):
     voc = Vocabulary.objects.order_by('swahili_word')
     filter = WordFilter(request.GET, queryset=Vocabulary.objects.all())
-    voc = filter.qs
-    context = {'voc' : voc, 'filter': filter}
+    voc = filter.qs.order_by('swahili_word')
+    display = f'style="display: none;"'
+    context = {'voc' : voc, 'filter': filter, 'display' : display}
     return render(request, 'swahili_to_english.html', context)
 
 def ets(request):
     voc = Vocabulary.objects.order_by('english_translation')
-    context = {'voc' : voc}
+    filter = WordFilter(request.GET, queryset=Vocabulary.objects.all())
+    voc = filter.qs.order_by('english_translation')
+    display = f'style="display: none;"'
+    context = {'voc' : voc, 'filter': filter, 'display' : display}
     return render(request, 'english_to_swahili.html', context)
 
 def edit(request):
     voc = Vocabulary.objects.order_by('swahili_word')
-    context = {'voc' : voc}
+    filter = WordFilter(request.GET, queryset=Vocabulary.objects.all())
+    voc = filter.qs.order_by('swahili_word')
+    display = f'style="display: none;"'
+    context = {'voc' : voc, 'filter': filter, 'display' : display}
     return render(request, 'edit.html', context)
 
 def create_word(request):
