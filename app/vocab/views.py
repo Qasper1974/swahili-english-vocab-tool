@@ -75,7 +75,7 @@ def create_word(request):
             form.save()
             # return redirect('home.html')
     context = { 'form' : form}
-    return render(request, 'vocab_form.html', context)
+    return render(request, 'add.html', context)
 
 def update_word(request, pk):
     word = Vocabulary.objects.get(id=pk)

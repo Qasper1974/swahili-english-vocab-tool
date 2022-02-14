@@ -17,6 +17,7 @@
                 {% csrf_token %}
                 {{form.as_p}}
                 <input class="btn btn-primary" type="submit" value="ADD">
+                <a class="btn btn-warning" style="margin-left: 120px;" href="{% url 'ste' %}">Don't add </a>
                  </form> 
         </div>
     </div>
